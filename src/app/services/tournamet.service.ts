@@ -5,22 +5,22 @@ import { Injectable } from '@angular/core';
 })
 export class TournametService {
 
-  private tournamets: Object[] = [];
+  private tournamets: {team1: string, score: string[], team2: string, winner: string}[] = [];
 
   constructor() { }
 
-  public getTournaments(): Object[] {
+  public getTournaments(): {team1: string, score: string[], team2: string, winner: string}[] {
     return this.tournamets;
   }
 
-  public getLastTournament(): {} {
+  public getLastTournament(): {team1: string, score: string[], team2: string, winner: string} {
     return this.tournamets[this.tournamets.length - 1];
   }
 
   public setMatch(team1: string, team2: string): void {
     const match = {
       team1,
-      score: ['0/25', '0/25', '0/25', '0/25', '0/15'],
+      score: ['0/0', '0/0', '0/0', '0/0', '0/0'],
       team2,
       winner: ''
     }
