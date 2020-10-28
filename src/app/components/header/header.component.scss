@@ -1,0 +1,59 @@
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+
+  .logo {
+    height: 3rem;
+    width: 3rem;
+    background: url('../../../assets/logo.png');
+    background-position: center;
+    background-size: cover;
+    margin-left: 1rem;
+    animation: rotate_ball 2s linear infinite;
+
+    &:hover,
+    &:active {
+      cursor: pointer;
+      animation: 0.2s jump ease-in-out forwards;
+    }
+  }
+
+  .menu-option {
+    margin: 0 1rem;
+    padding: 0.5rem;
+    font-weight: bold;
+
+    &:hover,
+    &:active {
+      cursor: pointer;
+      background-color: #fff;
+      color: #568df3;
+      border-radius: 0.5rem;
+    }
+  }
+}
+
+@keyframes rotate_ball {
+  0% {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes jump {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-0.5rem);
+  }
+
+  100% {
+    transform: translateY(0.2rem);
+  }
+}
