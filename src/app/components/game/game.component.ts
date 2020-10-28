@@ -8,7 +8,7 @@ import { TournametService } from 'src/app/services/tournamet.service';
   styleUrls: ['./game.component.scss']
 })
 export class GameComponent implements OnInit {
-  public match: {team1: string, score: string[], team2: string, winner: string};
+  public match: {team1: string, score: string[], team2: string, accountant: { team1: number, team2: number}};
   public showMessage = false;
   public sets: number[] = [1,2,3,4,5];
 
@@ -19,7 +19,7 @@ export class GameComponent implements OnInit {
     this.verifyLastMatch(lastMatch);
   }
 
-  private verifyLastMatch(match: {team1: string, score: string[], team2: string, winner: string}): void{
+  private verifyLastMatch(match: {team1: string, score: string[], team2: string, accountant: { team1: number, team2: number}}): void{
     if (match) {
       if (match.team1 && match.team2 ) {        
         this.match = match;

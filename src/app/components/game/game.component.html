@@ -4,7 +4,10 @@
     </div>
     <ng-template #marcador>        
         <div class="contenedor" *ngFor="let set of sets">
-            <app-scoreboard [lastMatch]="match"></app-scoreboard>            
+            <app-scoreboard 
+                [gameSet]=set 
+                [lastMatch]="match">
+            </app-scoreboard>            
         </div>        
     </ng-template>
 </div>
