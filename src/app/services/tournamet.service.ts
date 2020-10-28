@@ -5,15 +5,15 @@ import { Injectable } from '@angular/core';
 })
 export class TournametService {
 
-  private tournamets: {team1: string, score: string[], team2: string, winner: string}[] = [];
+  private tournamets: {team1: string, score: string[], team2: string, accountant: { team1: number, team2: number}}[] = [];
 
   constructor() { }
 
-  public getTournaments(): {team1: string, score: string[], team2: string, winner: string}[] {
+  public getTournaments(): {team1: string, score: string[], team2: string, accountant: { team1: number, team2: number}}[] {
     return this.tournamets;
   }
 
-  public getLastTournament(): {team1: string, score: string[], team2: string, winner: string} {
+  public getLastTournament(): {team1: string, score: string[], team2: string, accountant: { team1: number, team2: number}} {
     return this.tournamets[this.tournamets.length - 1];
   }
 
@@ -22,12 +22,15 @@ export class TournametService {
       team1,
       score: ['0/0', '0/0', '0/0', '0/0', '0/0'],
       team2,
-      winner: ''
+      accountant: {
+        team1: 0,
+        team2: 0
+      }
     }
     this.tournamets.push(match);
   }
 
-  public setLastTournament(match: {team1: string, score: string[], team2: string, winner: string}): void {
+  public setLastTournament(match: {team1: string, score: string[], team2: string, accountant: { team1: number, team2: number}}): void {
     this.tournamets[this.tournamets.length - 1] = match;
   }
 }
