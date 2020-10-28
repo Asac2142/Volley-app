@@ -3,22 +3,22 @@
     <div class="marcador">
         <div class="equipo1">
             <label for="">{{ match.team1 }}</label>
-            <input type="number" value="0" class="score1">
+            <input type="number" value="0" class="score1" #score1>
         </div>
         <div class="equipo2">
             <label for="">{{ match.team2 }}</label>
-            <input type="number" value="0" class="score2">
+            <input type="number" value="0" class="score2" #score2>
         </div>
     </div>  
     <div class="servicio">
         <div class="servicio1">
             <label for="">Servicio</label>
-            <input type="checkbox" class="chbx-equipo1" (click)="setService()" [checked]="checkForService">
+            <input type="checkbox" class="chbx-equipo1" [checked]="checkForService">
             <button class="btn-team1" (click)="addScoreTeam1()">Puntaje</button>
         </div>        
         <div class="servicio2">
             <label for="">Servicio</label>
-            <input type="checkbox" class="chbx-equipo2" (click)="setService()" [checked]="!checkForService">
+            <input type="checkbox" class="chbx-equipo2" [checked]="!checkForService">
             <button class="btn-team2" (click)="addScoreTeam2()">Puntaje</button>
         </div>
     </div>                  

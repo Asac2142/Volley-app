@@ -1,3 +1,8 @@
+h1 {
+    text-align: center;
+    margin-bottom: 3rem;
+}     
+
 .marcador {
     display: flex;        
     flex-direction: column;
@@ -29,6 +34,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    .chbx-equipo1[disabled] {        
+        border: 2px solid red;
+    }
 
     .servicio1,
     .servicio2 {
