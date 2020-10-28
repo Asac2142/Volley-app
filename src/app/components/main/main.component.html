@@ -1,13 +1,14 @@
 <div class="container">
+  <h1>Inscripcion de equipos</h1>
   <div class="form">
     <label for="team1">Equipo 1</label>
     <div class="team1-container">
-      <input type="text" class="team1">
+      <input type="text" class="team1" placeholder="Nombre del primer equipo" #input1>
     </div>
 
     <label for="">Equipo 2</label>
     <div class="team2-container">
-      <input type="text" class="team2">
+      <input type="text" class="team2" placeholder="Nombre del segundo equipo" #input2>
     </div>
 
     <button (click)="play()" class="btnJugar">Jugar</button>
