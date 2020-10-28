@@ -11,7 +11,7 @@
     background-position: center;
     background-size: cover;
     margin-left: 1rem;
-    animation: rotate_ball 2s linear infinite;
+    outline: none;    
 
     &:hover,
     &:active {
@@ -20,19 +20,26 @@
     }
   }
 
-  .menu-option {
-    margin: 0 1rem;
-    padding: 0.5rem;
-    font-weight: bold;
+  .menu {
+    display: flex;
 
-    &:hover,
-    &:active {
-      cursor: pointer;
-      background-color: #fff;
-      color: #568df3;
-      border-radius: 0.5rem;
+    .menu-option {
+      margin: 0 1rem;
+      padding: 0.5rem;
+      font-weight: bold;
+      outline: none;
+  
+      &:hover,
+      &:active {
+        cursor: pointer;
+        background-color: #fff;
+        color: #568df3;
+        border-radius: 0.5rem;        
+        transition: 0.2s ease-in-out;
+      }
     }
   }
+
 }
 
 @keyframes rotate_ball {
