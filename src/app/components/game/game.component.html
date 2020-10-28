@@ -1,1 +1,10 @@
-<p>game works!</p>
+<div class="container">
+    <div class="message" *ngIf="showMessage; else marcador">
+        <h1>Inscribe a los equipos para jugar</h1>
+    </div>
+    <ng-template #marcador>        
+        <div class="contenedor" *ngFor="let set of sets">
+            <app-scoreboard [lastMatch]="match"></app-scoreboard>            
+        </div>        
+    </ng-template>
+</div>
