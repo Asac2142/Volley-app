@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TournametService {
-
   private tournamets: {team1: string, score: string[], team2: string, accountant: { team1: number, team2: number}}[] = [];
+  public endMatch: Subject<boolean> = new Subject<boolean>();
+  public winner: Subject<string> = new Subject<string>();
 
   constructor() { }
 
