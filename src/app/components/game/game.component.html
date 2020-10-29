@@ -9,5 +9,9 @@
                 [lastMatch]="match">
             </app-scoreboard>            
         </div>        
-    </ng-template>
+    </ng-template>    
+    <app-modal 
+        *ngIf="showModal" 
+        [winnerTeam]="winnerTeam">
+    </app-modal>    
 </div>

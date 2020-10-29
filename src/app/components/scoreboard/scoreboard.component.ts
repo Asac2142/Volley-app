@@ -1,5 +1,6 @@
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 
+import { EndpointService } from 'src/app/services/endpoint.service';
 import { TournametService } from 'src/app/services/tournamet.service';
 
 @Component({
@@ -17,7 +18,7 @@ export class ScoreboardComponent implements OnInit {
   public checkForService = false;
   public disableElement = false;
 
-  constructor(private tournamentService: TournametService) { }
+  constructor(private tournamentService: TournametService, private endPoint: EndpointService) { }
 
   ngOnInit(): void { }
 
@@ -91,8 +92,13 @@ export class ScoreboardComponent implements OnInit {
   }
 
   private verifyNumberOfWins(): void {
-    if (this.match.accountant.team1 === 3 || this.match.accountant.team2 === 3) {
-      console.log("PARTIDO FINALIZADO");
+    const scoreTeam1 = this.match.accountant.team1;
+    const scoreTeam2 = this.match.accountant.team2;
+
+    if (scoreTeam1 === 3 || scoreTeam2 === 3) {
+      this.tournamentService.endMatch.next(true);
+      this.tournamentService.winner.next(scoreTeam1 === 3 ? this.match.team1 : this.match.team2);
+      this.endPoint.sendMatch();
     }
   }
 
